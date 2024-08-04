@@ -1,12 +1,13 @@
 {{ define "main" }}
     <section class="hero">
         <h1>{{ .Title }}</h1>
-        {{ partial "search.html" . }}
     </section>
     <main>
         <p>{{ .Content }}</p>
         <ul>
-            {{ $paginator := .Paginate (.Pages) }}
+            {{ $paginator := .Pages }}
+            {{ $paginator := sort $paginator "Title" }}
+            {{ $paginator := .Paginate ($paginator) }}
             {{ partial "cards" . }}
             <!-- Pagination links -->
             {{ if gt $paginator.TotalPages 1 }}

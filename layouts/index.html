@@ -5,7 +5,9 @@
         <p>{{ .Content }}</p>
     </section>
     <main>
-        {{ $posts := where .Site.RegularPages "Section" "blog" }}
+        {{ $posts := where .Site.RegularPages "Section" "media"  }}
+        {{ $posts := where $posts "Params.featured" true  }}
+        {{ $posts := sort $posts "Params.featuredAs"  }}
         {{ $paginator := .Paginate ($posts) }}
         {{ partial "cards" . }}
         <!-- Pagination links -->

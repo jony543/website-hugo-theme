@@ -5,7 +5,7 @@ description = "A minimalist theme with a light airy feel, site search, built-in 
 homepage = "https://github.com/victoriadrake/hugo-theme-quint"
 demosite = "https://quint-theme-demo.netlify.app/"
 tags = ["responsive","minimal","light","dark","personal","dark mode"]
-features = ["dark mode","light mode","search","image banners"]
+features = ["dark mode","light mode","image banners"]
 min_version = "0.125.4"
 
 [author]

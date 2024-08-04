@@ -1,0 +1,19 @@
+{{ with .Params.vimeo }}
+    <iframe src="https://player.vimeo.com/video/{{ . }}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Jonathan Ataria - Quicksilver and Tray"></iframe>
+{{ else }}
+    {{ with .Params.makertube }}
+        <iframe title="Jonathan Ataria - Quicksilver and Tray" src="https://makertube.net/videos/embed/{{ . }}?warningTitle=0&amp;controlBar=0&amp;peertubeLink=0&amp;p2p=0" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+    {{ else }}
+        {{ with .Params.youtube }}
+            <iframe src="https://www.youtube.com/embed/{{ . }}?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        {{ else }}
+            {{ with .Params.soundcloud }}
+                <iframe scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ . }}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
+            {{ else }}
+                {{ with .Params.audio }}
+                    <audio controls><source src="/audio/{{ . }}" type="audio/wav" /></audio>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}
