@@ -1,8 +1,18 @@
 <footer>
-    <div class="social-media">
-        {{ range site.Params.social}}
-        <a href="{{ .url }}"><img src="{{ .icon }}" alt="{{ .name }}"></a>
-        {{ end }}
-    </div>
+    {{ if ( isset site.Params "social" ) }}
+        <div class="social-media">
+            {{ range site.Params.social}}
+                <a href="{{ .url }}" target="_blank"><img src="{{ .icon }}" alt="{{ .name }}"></a>
+            {{ end }}
+        </div>
+    {{ end }}
     {{/*  {{ partial "logo" }}  */}}
+    <p>© {{ site.Params.copyright }}</p>
+    <nav>
+        <ul>
+            {{- range site.Menus.main }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{- end }}
+        </ul>
+    </nav>
 </footer>
