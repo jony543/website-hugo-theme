@@ -12,6 +12,10 @@
             {{ else }}
                 {{ with .Params.audio }}
                     <audio controls><source src="/audio/{{ . }}" type="audio/wav" /></audio>
+                {{ else }}
+                    {{ with .Params.image }}
+                        <img src="/images/{{ . }}" />
+                    {{ end }}  
                 {{ end }}
             {{ end }}
         {{ end }}
