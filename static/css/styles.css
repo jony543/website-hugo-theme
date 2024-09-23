@@ -235,10 +235,6 @@ ul.search-results li a {
     padding: 0 1rem;
 }
 
-.card .text .small {
-    font-size: 0.9rem;
-}
-
 .card a {
     color: var(--primary-text);
 }
