@@ -6,4 +6,9 @@
     {{ range .Site.Params.css -}}
         <link rel="stylesheet" href="/{{ . }}">
     {{- end }}
+    {{ if ( isset site.Params "links" ) }}
+        {{ range site.Params.links }}
+           <link rel="{{ .rel }}" href="{{ .href }}">
+        {{ end }}
+{{ end }}
 </head>
