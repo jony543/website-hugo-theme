@@ -2,6 +2,9 @@
 <section class="hero {{ .Type }}">
     <div>
         <h1 id="textOverlay">{{ .Title }}</h1>
+        {{ with .Params.subtitle }}
+            <h3 class="subtitle">{{ . }}</h3>
+        {{ end }}
     </div>
 </section>
 <main class="post {{ .Type }}">

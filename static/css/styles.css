@@ -131,6 +131,10 @@ header {
     margin: 0;
 }
 
+.hero .subtitle {
+    font-weight: normal;
+}
+
 .hero h1 {
     font-size: 2rem;
     color: var(--primary-text);
