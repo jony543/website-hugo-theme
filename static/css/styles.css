@@ -203,7 +203,8 @@ ul.search-results li a {
 .card {
     background-color: transparent;
     aspect-ratio: 16/9;
-    /* min-height: 400px; */
+    width: 100%;
+    margin: auto;
 }
 
 .card iframe {
