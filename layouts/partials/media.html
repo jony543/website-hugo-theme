@@ -11,10 +11,10 @@
                 <iframe scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ . }}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
             {{ else }}
                 {{ with .Params.audio }}
-                    <audio controls><source src="{{ printf "/audio/%s" .  | absURL }}" type="audio/wav" /></audio>
+                    <audio controls><source src="{{ printf "audio/%s" .  | absURL }}" type="audio/wav" /></audio>
                 {{ else }}
                     {{ with .Params.image }}
-                        <img src="{{printf "/images/%s"  . | absURL }}" />
+                        <img src="{{printf "images/%s"  . | absURL }}" />
                     {{ end }}  
                 {{ end }}
             {{ end }}

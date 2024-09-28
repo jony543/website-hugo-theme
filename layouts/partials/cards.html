@@ -12,7 +12,7 @@
                 {{ end }}
                 {{ if ne $.IsHome true }}
                     {{ with .Params.image }}
-                        <img src="{{printf "/images/%s" . | absURL}}" />
+                        <img src="{{printf "images/%s" . | absURL}}" />
                     {{ else }}
                         {{ partial "randImage" }}
                     {{ end }}
