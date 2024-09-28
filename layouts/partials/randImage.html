@@ -3,4 +3,4 @@
 {{ $max := site.Params.numImages }}
 <!-- Maximum number of your image filenames -->
 {{ $randomNumber := (add (mul (math.Rand) (add (sub $max $min) 1)) $min) | int }}
-<img src="/images/{{ $randomNumber }}.jpg" alt="{{ .Title }}">
+<img src="{{printf "/images/%s.jpg" $randomNumber | absURL }}" alt="{{ .Title }}">

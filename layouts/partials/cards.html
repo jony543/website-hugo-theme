@@ -8,11 +8,11 @@
             {{ end }}
             <a href="{{ .Permalink }}">
                 {{ if $.IsHome }}
-                    {{ partial "video" . }}
+                    {{ partial "media" . }}
                 {{ end }}
                 {{ if ne $.IsHome true }}
                     {{ with .Params.image }}
-                        <img src="/images/{{ . }}" />
+                        <img src="{{printf "/images/%s" . | absURL}}" />
                     {{ else }}
                         {{ partial "randImage" }}
                     {{ end }}

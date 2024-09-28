@@ -2,7 +2,7 @@
     {{ if ( isset site.Params "social" ) }}
         <div class="social-media">
             {{ range site.Params.social}}
-                <a href="{{ .url }}" rel="me" target="_blank"><img src="{{ .icon }}" alt="{{ .name }}"></a>
+                <a href="{{ .url }}" rel="me" target="_blank"><img src="{{ .icon | absURL }}" alt="{{ .name }}"></a>
             {{ end }}
         </div>
     {{ end }}
