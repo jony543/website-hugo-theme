@@ -5,7 +5,7 @@
     --secondary-text: #252627;
     --link-color: #879094;
     --shadow-color: rgba(0, 0, 0, 0.15);
-    --min-desktop-depth: 950px;
+    --min-desktop-depth: 768px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -215,7 +215,7 @@ ul.search-results li a {
     aspect-ratio: 16/9;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 768px) {
     .blog-cards {
         grid-template-columns: 1fr;
     }
@@ -287,7 +287,7 @@ footer nav {
     display: none;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 768px) {
     footer nav {
         display: block;
     }
