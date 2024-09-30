@@ -207,7 +207,7 @@ ul.search-results li a {
 .card {
     background-color: transparent;
     width: 100%;
-    max-height: 340px;
+    max-height: 380px;
 }
 
 .card iframe {
