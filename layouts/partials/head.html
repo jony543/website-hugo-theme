@@ -1,7 +1,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Site.Title }}</title>
+    <title>
+        {{ if .IsHome }}
+            {{ .Site.Title }}
+            {{ else }}
+            {{ if strings.Contains .Site.Title .Title }}
+                {{ .Site.Title }}
+            {{ else }}
+                {{ .Title }} | 
+                {{ with site.Params.titleSuffix }}
+                    {{ . }}
+                {{ else }}
+                    {{ .Site.Title }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    </title>
     <link rel="stylesheet" href="{{ "css/styles.css" | absURL }}">
     {{ range .Site.Params.css -}}
         <link rel="stylesheet" href="{{ . | absURL }}">
@@ -10,5 +25,5 @@
         {{ range site.Params.links }}
            <link rel="{{ .rel }}" href="{{ .href }}">
         {{ end }}
-{{ end }}
+    {{ end }}
 </head>

@@ -11,8 +11,10 @@
     <div>
         {{ .Content }}
     </div>
-    <div>
-        {{ partial "media" . }}
-    </div>
+    {{ if not .Params.disable_media_in_single_view }}
+        <div>
+            {{ partial "media" . }}
+        </div>
+    {{ end }}
 </main>
 {{ end }}
