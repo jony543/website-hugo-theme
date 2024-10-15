@@ -4,17 +4,8 @@
     <title>
         {{ if .IsHome }}
             {{ .Site.Title }}
-            {{ else }}
-            {{ if strings.Contains .Site.Title .Title }}
-                {{ .Site.Title }}
-            {{ else }}
-                {{ .Title }} | 
-                {{ with site.Params.titleSuffix }}
-                    {{ . }}
-                {{ else }}
-                    {{ .Site.Title }}
-                {{ end }}
-            {{ end }}
+        {{ else }}
+            {{ .Title }} - {{ .Site.Title }}
         {{ end }}
     </title>
     <link rel="stylesheet" href="{{ "css/styles.css" | absURL }}">
