@@ -7,7 +7,7 @@
         </div>
     {{ end }}
     {{/*  {{ partial "logo" }}  */}}
-    <p>© {{ site.Params.copyright }}</p>
+    <p>© <span id="currentYear"></span> {{ site.Params.copyright }}</p>
     <nav>
         <ul>
             {{- range site.Menus.main }}
@@ -15,4 +15,10 @@
             {{- end }}
         </ul>
     </nav>
+    <script lang="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var currentYear = new Date().getFullYear();
+            document.getElementById('currentYear').textContent = currentYear;
+        });
+    </script>
 </footer>
