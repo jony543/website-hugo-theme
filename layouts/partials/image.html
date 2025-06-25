@@ -1,0 +1,6 @@
+{{ $imageCredit := .Params.imageCredit }}
+{{ with .Params.image }}
+    <img src="{{printf "images/%s" . | absURL}}" {{ if $imageCredit }} title="Photo by {{ $imageCredit }}" {{ end }} />
+{{ else }}
+    {{ partial "randImage" }}
+{{ end }}
