@@ -6,7 +6,7 @@
         <p>{{ .Content }}</p>
         <ul>
             {{ $paginator := .Pages }}
-            {{ $paginator := sort $paginator "Title" }}
+            {{ $paginator := sort $paginator site.Params.sortBy site.Params.sortDirection }}
             {{ $paginator := .Paginate ($paginator) }}
             {{ partial "cards" . }}
             <!-- Pagination links -->
