@@ -13,7 +13,11 @@
                 {{ with .Params.audio }}
                     <audio controls><source src="{{ printf "audio/%s" .  | absURL }}" type="audio/wav" /></audio>
                 {{ else }}
-                    {{ partial "image" . }}
+                    {{ with .Params.reel }}
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DM5oHN5suZ8/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="display: none"></blockquote>
+                    {{ else }}
+                        {{ partial "image" . }}
+                    {{ end }}
                 {{ end }}
             {{ end }}
         {{ end }}
