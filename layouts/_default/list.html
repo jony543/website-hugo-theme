@@ -1,6 +1,13 @@
 {{ define "main" }}
     <section class="hero {{ .Type }}">
         <h1>{{ .Title }}</h1>
+        {{ if .Params.showTags }}
+            <div class="tags"> 
+                {{range $name, $taxonomy := .Site.Taxonomies.tags}}
+                    {{ partial "tag.html" $name }}
+                {{ end }}
+            </div>
+        {{ end }}
     </section>
     <main>
         <p>{{ .Content }}</p>

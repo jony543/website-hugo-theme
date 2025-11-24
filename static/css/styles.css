@@ -219,9 +219,6 @@ ul.search-results li a {
     .blog-cards {
         grid-template-columns: 1fr;
     }
-    .card iframe {
-        height: 80%;
-    }
 }
 .card .featured-text {
     text-align: center;
@@ -240,12 +237,18 @@ ul.search-results li a {
     padding: 0 1rem;
 }
 
-.card a {
+.card a.tag-body {
     color: var(--primary-text);
     display: grid;
     grid-template-rows: auto 1fr;
     height: 100%;
     width: 100%;
+}
+
+.card .tag-link {
+    float: right;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
 }
 
 /* Post Styles */
@@ -412,4 +415,24 @@ code {
 
 pre {
     transition: all 0.3s ease-in-out;
+}
+
+.tag {
+    display: inline-block;
+    
+    border: 1px solid var(--link-color);
+    border-radius: 2px;
+    
+    padding: 0em .3em;
+    margin: .25em .1em;
+
+    color: var(--link-color);
+}
+.tag::before {
+    content: "#";
+    margin-right: .1em;
+}
+.tag:hover {
+    background-color: var(--link-color);
+    color: var(--primary-text);
 }

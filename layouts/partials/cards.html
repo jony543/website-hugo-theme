@@ -2,22 +2,24 @@
     {{ range .Paginator.Pages }}
         <div class="card">
             {{ if $.IsHome }}
-                {{ with .Params.featuredAs }}
-                    <h3 class="featured-text">{{ . }}</h3>
-                {{ end }}
+                {{ $mainTag := index (.Params.tags) 0 }}
+                <h3 class="featured-text">{{ $mainTag | title }}</h3>
+                {{ partial "media" . }}
+                {{ with site.GetPage (printf "/tags/%s" $mainTag) -}}
+                    <a href="{{ .Permalink }}">
+                        <span class="tag-link">more {{ $mainTag | lower }} >></span>
+                    </a>
+                {{- end -}}
             {{ end }}
-            <a href="{{ .Permalink }}">
-                {{ if $.IsHome }}
-                    {{ partial "media" . }}
-                {{ end }}
-                {{ if ne $.IsHome true }}
+            {{ if ne $.IsHome true }}
+                <a class="tag-body" href="{{ .Permalink }}">
                     {{ partial "image" . }}
                     <div class="text">  
                         <h2>{{ .Title }}</h2>
                         <p>{{ .Summary }}</p>
                     </div>
-                {{ end }}
-            </a>
+                </a>
+            {{ end }}
         </div>
     {{ end }}
 </div>

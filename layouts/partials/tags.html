@@ -1,0 +1,14 @@
+
+{{/*  {{ $tags := slice }}
+{{ with .Param "tags"}}
+    {{ $tags = . }}
+{{ else }}
+    {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $tags = $tags | append $name }} {{ end }}
+{{ end }}  */}}
+{{ with .Param "tags"}}
+    <div class="tags">
+        {{ range $index, $tag := . }}
+            {{ partial "tag.html" $tag }}
+        {{- end -}}
+    </div>
+{{ end }}

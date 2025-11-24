@@ -1,0 +1,6 @@
+{{ $tag := . }}
+{{ with site.GetPage (printf "/tags/%s" $tag) -}}
+    <a href="{{ .Permalink }}">
+        <span class="tag">{{ $tag }}</span>
+    </a>
+{{- end -}}

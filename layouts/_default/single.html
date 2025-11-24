@@ -5,6 +5,7 @@
         {{ with .Params.subtitle }}
             <h3 class="subtitle">{{ . }}</h3>
         {{ end }}
+        {{ partial "tags.html" . }}
     </div>
 </section>
 <main class="post {{ .Type }}">
